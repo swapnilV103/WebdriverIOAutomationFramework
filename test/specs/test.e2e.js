@@ -16,14 +16,25 @@ describe("Ecommerse Application", function()   //in latest JS models you don't n
         await $("#terms").click()
         await $("#signInBtn").click()
         console.log(await $(".alert-danger").getText())
+        browser.waitUntil()
         await browser.pause(5000)
         console.log("***********************************************************")
         await browser.pause(5000)
 
-
-
-
     } )
+
+    it("Login success page title", async()=>
+    {
+        await browser.url("https://rahulshettyacademy.com/loginpagePractise/")
+        await browser.pause(3000)
+
+        await $("#username").setValue("rahulshettyacademy")
+        await $("#password").setValue("learning")
+        await $("#terms").click()
+        await browser.pause(5000)
+
+    })
+
 
 
 
