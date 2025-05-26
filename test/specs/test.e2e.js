@@ -23,6 +23,7 @@ describe("Ecommerse Application", function()   //in latest JS models you don't n
 
     } )
 
+
     it("Login success page title", async()=>
     {
         await browser.url("https://rahulshettyacademy.com/loginpagePractise/")
@@ -31,6 +32,9 @@ describe("Ecommerse Application", function()   //in latest JS models you don't n
         await $("#username").setValue("rahulshettyacademy")
         await $("#password").setValue("learning")
         await $("#terms").click()
+        await $("#signInBtn").click()
+        await $(".btn-primary").waitForExist()
+        await expect(browser).toHaveUrlContaining("shop")
         await browser.pause(5000)
 
     })
